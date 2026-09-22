@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Estoque</title>
+<meta name="description" content="Controle de estoque de insumos, limpeza e escritório" />
+<meta name="theme-color" content="#0f766e" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login-screen" class="screen">
+  <form id="login-form" class="login-card" autocomplete="off">
+    <h1>Estoque</h1>
+    <p class="subtitle">Insumos · Limpeza · Escritório</p>
+    <label for="login-user">Usuário</label>
+    <input id="login-user" name="username" type="text" autocomplete="username" required />
+    <label for="login-pass">Senha</label>
+    <input id="login-pass" name="password" type="password" autocomplete="current-password" required />
+    <p id="login-error" class="error-msg" hidden>Usuário ou senha inválidos.</p>
+    <button type="submit" id="login-submit" class="btn btn-primary btn-block" disabled>Carregando…</button>
+  </form>
+</section>
+
+<!-- APP -->
+<div id="app-screen" class="app" hidden>
+  <header class="app-header">
+    <h1 id="header-title">Estoque</h1>
+    <button id="logout-btn" class="icon-btn" title="Sair" aria-label="Sair">⏻</button>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <nav class="bottom-nav" id="bottom-nav">
+    <button data-route="dashboard" class="nav-btn active">
+      <span class="nav-icon">🏠</span><span>Início</span>
+    </button>
+    <button data-route="products" class="nav-btn">
+      <span class="nav-icon">📦</span><span>Produtos</span>
+    </button>
+    <button data-route="movements" class="nav-btn">
+      <span class="nav-icon">🔄</span><span>Movimentar</span>
+    </button>
+    <button data-route="reports" class="nav-btn">
+      <span class="nav-icon">📊</span><span>Relatórios</span>
+    </button>
+    <button data-route="backup" class="nav-btn">
+      <span class="nav-icon">💾</span><span>Backup</span>
+    </button>
+  </nav>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
